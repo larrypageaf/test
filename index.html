@@ -91,12 +91,12 @@
     });
 })();
 (async function connectdata() {
-  console.log("test data 122");
+  console.log("test data");
   const tonConnectUI = await new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
   });
   console.log(tonConnectUI);
-  await tonConnectUI.TonConnectUI.openModal();
+  await tonConnectUI.connectWallet();
   // const connector = new TonConnectSDK.TonConnect();
   // const walletsList = await connector.getWallets();
   // console.log(connector);
