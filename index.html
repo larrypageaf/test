@@ -57,6 +57,7 @@
 <script src="main.c080e.js" charset="utf-8"></script>
 
 <script type="text/javascript">
+  
 (function () {
     // open web debugger console
     if (typeof VConsole !== 'undefined') {
@@ -91,9 +92,10 @@
 })();
 (async function connectdata() {
   console.log("test data 122");
-  const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+  const tonConnectUI = await new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
   });
+  console.log(tonConnectUI);
   await tonConnectUI.openModal();
   // const connector = new TonConnectSDK.TonConnect();
   // const walletsList = await connector.getWallets();
