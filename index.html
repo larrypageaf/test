@@ -104,6 +104,8 @@
   const currentWalletInfo = tonConnectUI.walletInfo;
   const currentAccount = tonConnectUI.account;
   const currentIsConnectedStatus = tonConnectUI.connected;
+  const walletsList = await tonConnectUI.getWallets();
+  console.log(walletsList);
   console.log(currentWallet);
   console.log(currentWalletInfo);
   console.log(currentAccount);
