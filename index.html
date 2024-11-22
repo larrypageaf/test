@@ -98,7 +98,8 @@
     manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
   });
   console.log(tonConnectUI);
-  await tonConnectUI.connectWallet();
+  let dataRetun = await tonConnectUI.connectWallet();
+  console.log(dataRetun);
   // const connector = new TonConnectSDK.TonConnect();
   // const walletsList = await connector.getWallets();
   // console.log(connector);
