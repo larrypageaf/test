@@ -87,9 +87,10 @@
       }
     });
 })();
-(function connectdata() {
-  console.log("test data ");
+(async function connectdata() {
+  console.log("test data 1");
   const connector = new TonConnectSDK.TonConnect();
+  const walletsList = await connector.getWallets();
   console.log(connector);
 })();
 </script>
