@@ -92,9 +92,8 @@
 (async function connectdata() {
   console.log("test data 122");
   const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json',
-    buttonRootId: '<ConnectClick>'
-});
+    manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
+  });
   await tonConnectUI.openModal();
   // const connector = new TonConnectSDK.TonConnect();
   // const walletsList = await connector.getWallets();
