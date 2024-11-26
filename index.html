@@ -69,7 +69,30 @@
     var debug = window._CCSettings.debug;
     var splash = document.getElementById('splash');
     splash.style.display = 'block';
-
+    async function connectdata() {
+      // await tonConnectUI.disconnect();
+      console.log("test data");
+      const tonConnectUI = await new TON_CONNECT_UI.TonConnectUI({
+        manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
+      });
+      console.log(tonConnectUI);
+      let dataRetun = await tonConnectUI.connectWallet();
+      console.log(dataRetun);
+      const currentWallet = tonConnectUI.wallet;
+      const currentWalletInfo = tonConnectUI.walletInfo;
+      const currentAccount = tonConnectUI.account;
+      const currentIsConnectedStatus = tonConnectUI.connected;
+      const walletsList = await tonConnectUI.getWallets();
+      console.log(walletsList);
+      console.log(currentWallet.account.address);
+      console.log(currentWalletInfo);
+      console.log(currentAccount);
+      console.log(currentIsConnectedStatus);
+      // const connector = new TonConnectSDK.TonConnect();
+      // const walletsList = await connector.getWallets();
+      // console.log(connector);
+      // connector.restoreConnection();
+    }
     function loadScript (moduleName, cb) {
       function scriptLoaded () {
           document.body.removeChild(domScript);
@@ -92,30 +115,7 @@
       }
     });
 })();
-(async function connectdata() {
-  // await tonConnectUI.disconnect();
-  console.log("test data");
-  const tonConnectUI = await new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
-  });
-  console.log(tonConnectUI);
-  let dataRetun = await tonConnectUI.connectWallet();
-  console.log(dataRetun);
-  const currentWallet = tonConnectUI.wallet;
-  const currentWalletInfo = tonConnectUI.walletInfo;
-  const currentAccount = tonConnectUI.account;
-  const currentIsConnectedStatus = tonConnectUI.connected;
-  const walletsList = await tonConnectUI.getWallets();
-  console.log(walletsList);
-  console.log(currentWallet.account.address);
-  console.log(currentWalletInfo);
-  console.log(currentAccount);
-  console.log(currentIsConnectedStatus);
-  // const connector = new TonConnectSDK.TonConnect();
-  // const walletsList = await connector.getWallets();
-  // console.log(connector);
-  // connector.restoreConnection();
-})();
+// ()();
 </script>
 </body>
 </html>
