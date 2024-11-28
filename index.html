@@ -91,9 +91,7 @@
       }
     });
 })();
- const tonConnectUI = await new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
-});
+ var tonConnectUI;
 window.connectdata = (async function connectdata() {
   // await tonConnectUI.disconnect();
   console.log("test data");
@@ -119,6 +117,9 @@ window.connectdata = (async function connectdata() {
 window.getWallet = (async function getconnectdata() {
   // await tonConnectUI.disconnect();
   console.log("test data");
+  tonConnectUI = await new TON_CONNECT_UI.TonConnectUI({
+    manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
+});
   // const tonConnectUI = await new TON_CONNECT_UI.TonConnectUI({
   //   manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
   // });
