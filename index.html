@@ -116,6 +116,15 @@ window.connectdata = (async function connectdata() {
   // console.log(connector);
   // connector.restoreConnection();
 });
+window.getWallet = (async function getconnectdata() {
+  // await tonConnectUI.disconnect();
+  console.log("test data");
+  const tonConnectUI = await new TON_CONNECT_UI.TonConnectUI({
+    manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
+  });
+  // console.log(tonConnectUI);
+  return tonConnectUI.connector.wallet;
+});
 </script>
 </body>
 </html>
