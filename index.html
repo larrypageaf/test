@@ -124,12 +124,12 @@ window.getWallet = (async function getconnectdata() {
   // const tonConnectUI = await new TON_CONNECT_UI.TonConnectUI({
   //   manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
   // });
-  console.log(tonConnectUI);
-  console.log(tonConnectUI.connector.Fe);
+  console.log(tonConnectUI.wallet);
+  // console.log(tonConnectUI.connector.Fe);
   // const walletsList = await tonConnectUI.getWallets();
   const currentWallet = tonConnectUI.wallet;
   let messagedata = {
-      address: tonConnectUI
+      address: "111"
     }
   var targetWindow = window.parent;
   targetWindow.postMessage(JSON.stringify(messagedata), '*');
