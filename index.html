@@ -54,9 +54,9 @@
     </div>
   </div>
 
-<script src="src/settings.c9a4e.js" charset="utf-8"></script>
+<script src="src/settings.bb1f6.js" charset="utf-8"></script>
 
-<script src="main.24372.js" charset="utf-8"></script>
+<script src="main.81078.js" charset="utf-8"></script>
 
 <script type="text/javascript">
 (function () {
@@ -126,7 +126,14 @@ window.getWallet = (async function getconnectdata() {
   // });
   // console.log(tonConnectUI);
   console.log(tonConnectUI.connector);
-  return "1111";
+  const walletsList = await tonConnectUI.getWallets();
+  let messagedata = {
+      address: currentWallet.account.address
+    }
+  var targetWindow = window.parent;
+  targetWindow.postMessage(JSON.stringify(messagedata), '*');
+  console.log(messagedata)
+  // return "1111";
 
 
 });
