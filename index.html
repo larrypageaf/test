@@ -113,7 +113,7 @@ window.connectdata = (async function connectdata() {
   // const walletsList = await connector.getWallets();
   // console.log(connector);
   // connector.restoreConnection();
-  return tonConnectUI.connector;
+  return tonConnectUI.wallet.account;
 });
 window.getWallet = (async function getconnectdata() {
   // await tonConnectUI.disconnect();
@@ -125,8 +125,8 @@ window.getWallet = (async function getconnectdata() {
   //   manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
   // });
   // console.log(tonConnectUI);
-  console.log(tonConnectUI.connector.Fe);
-  return tonConnectUI.connector;
+  console.log(tonConnectUI.wallet.account);
+  return tonConnectUI.wallet.account;
 });
 </script>
 </body>
