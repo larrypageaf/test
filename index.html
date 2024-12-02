@@ -120,13 +120,13 @@ window.getWallet = (async function getconnectdata() {
   console.log("test data");
   tonConnectUI = await new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
-});
+  });
   // const tonConnectUI = await new TON_CONNECT_UI.TonConnectUI({
   //   manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
   // });
   // console.log(tonConnectUI);
   console.log(tonConnectUI.connector);
-  return tonConnectUI.connector;
+  return "1111";
 
 
 });
