@@ -106,16 +106,23 @@ window.connectdata = (async function connectdata() {
   const currentAccount = tonConnectUI.account;
   const currentIsConnectedStatus = tonConnectUI.connected;
   const walletsList = await tonConnectUI.getWallets();
-  console.log(walletsList);
-  console.log(currentWallet.account.address);
-  console.log(currentWalletInfo);
-  console.log(currentAccount);
-  console.log(currentIsConnectedStatus);
+  // console.log(walletsList);
+  // console.log(currentWallet.account.address);
+  // console.log(currentWalletInfo);
+  // console.log(currentAccount);
+  // console.log(currentIsConnectedStatus);
+  // const currentWallet = tonConnectUI.wallet;
+  let messagedata = {
+      address: tonConnectUI.wallet.account.address
+    }
+  var targetWindow = window.parent;
+  targetWindow.postMessage(JSON.stringify(messagedata), '*');
+  console.log(messagedata)
   // const connector = new TonConnectSDK.TonConnect();
   // const walletsList = await connector.getWallets();
   // console.log(connector);
   // connector.restoreConnection();
-  return tonConnectUI.connector;
+  // return tonConnectUI.connector;
 });
 window.getWallet = (async function getconnectdata() {
   // await tonConnectUI.disconnect();
