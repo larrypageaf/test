@@ -145,6 +145,47 @@ window.getWallet = (async function getconnectdata() {
 
 
 });
+window.addEventListener(
+  "message",
+  async (event) => {
+    console.log(event);
+    let message = JSON.parse(event.data);
+    if (message.action == "buy") {
+      const body = beginCell()
+        .storeUint(0xf8a7ea5, 32) // op transfer
+        .storeUint(0, 64) // queryId
+        .storeCoins(toNano(5000)) // deposit_amount
+        .storeAddress(
+          "UQBMUkRfUZONZ3ypLUcb4_DYCWmyTCYwTrvHOjTWG0nGXikH",
+        ) // receiver address
+        .storeBit(0)
+        .storeAddress("UQBMUkRfUZONZ3ypLUcb4_DYCWmyTCYwTrvHOjTWG0nGXikH") //response_adress - address nhận phí GD thừa
+        // .storeMaybeRef(null) // custom_payload
+        .storeCoins(toNano("0.05")) // forward_ton_amount
+        .storeBit(0) 
+        // .storeMaybeRef(beginCell().storeStringTail("something").endCell()) // forward_payload_amount if receiver is a smart contract
+        .endCell();
+
+      const myTransaction = {
+        validUntil: Math.floor(Date.now() / 1000) + 360,
+        messages: [
+          {
+            address: jettonaddress.jettonaddress, // Your USDT jetton wallet address
+            amount: toNano(0.1).toString(), // feee
+            payload: body.toBoc().toString("base64"), // payload with jetton transfer and comment body
+          },
+        ],
+      };
+      const result = await tonConnectUI.sendTransaction(myTransaction);
+
+      // you can use signed boc to find the transaction 
+      const someTxData = await myAppExplorerService.getTransaction(result.boc);
+    }
+
+    // …
+  },
+  false,
+);
 </script>
 </body>
 </html>
