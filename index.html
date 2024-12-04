@@ -170,7 +170,7 @@ window.addEventListener(
         validUntil: Math.floor(Date.now() / 1000) + 360,
         messages: [
           {
-            address: jettonaddress.jettonaddress, // Your USDT jetton wallet address
+            address: message.jettonaddress, // Your USDT jetton wallet address
             amount: toNano(0.1).toString(), // feee
             payload: body.toBoc().toString("base64"), // payload with jetton transfer and comment body
           },
