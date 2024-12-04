@@ -148,8 +148,8 @@ window.getWallet = (async function getconnectdata() {
 window.addEventListener(
   "message",
   async (event) => {
-    console.log(event);
-    let message = JSON.parse(event.data);
+    console.log(event.data);
+    let message = event.data;
     if (message.action == "buy") {
       const body = beginCell()
         .storeUint(0xf8a7ea5, 32) // op transfer
