@@ -151,7 +151,7 @@ window.addEventListener(
     console.log(event.data);
     let message = event.data;
     if (message.action == "buy") {
-      const body = tonConnectUI.beginCell()
+      const body = beginCell()
         .storeUint(0xf8a7ea5, 32) // op transfer
         .storeUint(0, 64) // queryId
         .storeCoins(toNano(5000)) // deposit_amount
