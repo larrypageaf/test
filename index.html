@@ -45,7 +45,7 @@
   <!-- <script src="https://unpkg.com/@tonconnect/sdk@0.0.34/dist/tonconnect-sdk.min.js"></script> -->
   <!-- <script src="https://unpkg.com/@tonconnect/ui@0.0.9/dist/tonconnect-ui.min.js"></script> -->
   <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/@ton/core@0.59.0/dist/index.min.js"></script>
 
   <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
   <div id="splash">
@@ -151,7 +151,7 @@ window.addEventListener(
     console.log(event.data);
     let message = event.data;
     if (message.action == "buy") {
-      const body = beginCell()
+      const body = tonConnectUI.beginCell()
         .storeUint(0xf8a7ea5, 32) // op transfer
         .storeUint(0, 64) // queryId
         .storeCoins(toNano(5000)) // deposit_amount
