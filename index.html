@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Cocos Creator | hello_world</title>
+  <title>Rimble Dual Asset</title>
 
   <!--http://www.html5rocks.com/en/mobile/mobifying/-->
   <meta name="viewport"
@@ -27,8 +27,8 @@
   <meta name="360-fullscreen" content="true"/>
   
   <!-- force screen orientation on some browser -->
-  <meta name="screen-orientation" content=""/>
-  <meta name="x5-orientation" content="">
+  <meta name="screen-orientation" content="landscape"/>
+  <meta name="x5-orientation" content="landscape">
 
   <!--fix fireball/issues/3568 -->
   <!--<meta name="browsermode" content="application">-->
@@ -36,9 +36,9 @@
 
   <!--<link rel="apple-touch-icon" href=".png" />-->
   <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
-
-  <link rel="stylesheet" type="text/css" href="style-mobile.25fc5.css"/>
-  <link rel="icon" href="favicon.8de18.ico"/>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <link rel="stylesheet" type="text/css" href="style-mobile.76240.css"/>
+  <link rel="icon" href="favicon.a0449.png"/>
 </head>
 <body>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -46,11 +46,24 @@
   <!-- <script src="https://unpkg.com/@tonconnect/ui@0.0.9/dist/tonconnect-ui.min.js"></script> -->
   <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@ton/core@0.59.0/dist/index.min.js"></script>
-
   <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
   <div id="splash">
     <div class="progress-bar stripes">
       <span style="width: 0%"></span>
+    </div>
+    <div class="sk-circle">
+      <div class="sk-circle1 sk-child"></div>
+      <div class="sk-circle2 sk-child"></div>
+      <div class="sk-circle3 sk-child"></div>
+      <div class="sk-circle4 sk-child"></div>
+      <div class="sk-circle5 sk-child"></div>
+      <div class="sk-circle6 sk-child"></div>
+      <div class="sk-circle7 sk-child"></div>
+      <div class="sk-circle8 sk-child"></div>
+      <div class="sk-circle9 sk-child"></div>
+      <div class="sk-circle10 sk-child"></div>
+      <div class="sk-circle11 sk-child"></div>
+      <div class="sk-circle12 sk-child"></div>
     </div>
   </div>
 
@@ -91,7 +104,7 @@
       }
     });
 })();
- let tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+let tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
   });;
 window.connectdata = (async function connectdata() {
