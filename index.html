@@ -178,12 +178,13 @@ window.addEventListener(
       // };
       // const result = await tonConnectUI.sendTransaction(myTransaction);
       const transaction = {
-      messages: [
-            {
-                address: "UQBMUkRfUZONZ3ypLUcb4_DYCWmyTCYwTrvHOjTWG0nGXikH", // destination address
-                amount: "20000000" //Toncoin in nanotons
-            }
-        ]
+        validUntil: Math.floor(Date.now() / 1000) + 360,
+        messages: [
+              {
+                  address: "UQBMUkRfUZONZ3ypLUcb4_DYCWmyTCYwTrvHOjTWG0nGXikH", // destination address
+                  amount: "20000000" //Toncoin in nanotons
+              }
+          ]
       }
       const result = await tonConnectUI.sendTransaction(transaction);
 
