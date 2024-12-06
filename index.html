@@ -165,18 +165,28 @@ window.addEventListener(
       //   .storeBit(0) 
       //   // .storeMaybeRef(beginCell().storeStringTail("something").endCell()) // forward_payload_amount if receiver is a smart contract
       //   .endCell();
-      let body = "x{0F8A7EA500000000000000002138980098A488BEA3271ACEF9525A8E37C7E1B012D364984C609D778E7469AC36938CBD0013149117D464E359DF2A4B51C6F8FC36025A6C93098C13AEF1CE8D3586D271978805F5E100}";
-      const myTransaction = {
-        validUntil: Math.floor(Date.now() / 1000) + 360,
-        messages: [
-          {
-            address: "EQBs7OocXB0N8qrLiGIjbYHlMiGkFRchEt_1C5BVfHyi72-D", // Your USDT jetton wallet address
-            amount: 200000000, // feee
-            payload: body//body.toBoc().toString("base64"), // payload with jetton transfer and comment body
-          },
-        ],
-      };
-      const result = await tonConnectUI.sendTransaction(myTransaction);
+      // let body = "x{0F8A7EA500000000000000002138980098A488BEA3271ACEF9525A8E37C7E1B012D364984C609D778E7469AC36938CBD0013149117D464E359DF2A4B51C6F8FC36025A6C93098C13AEF1CE8D3586D271978805F5E100}";
+      // const myTransaction = {
+      //   validUntil: Math.floor(Date.now() / 1000) + 360,
+      //   messages: [
+      //     {
+      //       address: "EQBs7OocXB0N8qrLiGIjbYHlMiGkFRchEt_1C5BVfHyi72-D", // Your USDT jetton wallet address
+      //       amount: 200000000, // feee
+      //       payload: body//body.toBoc().toString("base64"), // payload with jetton transfer and comment body
+      //     },
+      //   ],
+      // };
+      // const result = await tonConnectUI.sendTransaction(myTransaction);
+      const transaction = {
+      messages: [
+            {
+                address: "UQBMUkRfUZONZ3ypLUcb4_DYCWmyTCYwTrvHOjTWG0nGXikH", // destination address
+                amount: "20000000" //Toncoin in nanotons
+            }
+        ]
+      }
+      const result = await tonConnectUI.sendTransaction(transaction);
+
 
       // you can use signed boc to find the transaction 
       const someTxData = await myAppExplorerService.getTransaction(result.boc);
