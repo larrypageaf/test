@@ -37,7 +37,7 @@
   <!--<link rel="apple-touch-icon" href=".png" />-->
   <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <link rel="stylesheet" type="text/css" href="style-mobile.76240.css"/>
+  <link rel="stylesheet" type="text/css" href="style-mobile.4bab1.css"/>
   <link rel="icon" href="favicon.a0449.png"/>
 </head>
 <body>
@@ -67,9 +67,9 @@
     </div>
   </div>
 
-<script src="src/settings.b276f.js" charset="utf-8"></script>
+<script src="src/settings.00c67.js" charset="utf-8"></script>
 
-<script src="main.9010b.js" charset="utf-8"></script>
+<script src="main.36a71.js" charset="utf-8"></script>
 
 <script type="text/javascript">
 (function () {
@@ -195,7 +195,7 @@ window.addEventListener(
         messages: [
               {
                   address: "UQBMUkRfUZONZ3ypLUcb4_DYCWmyTCYwTrvHOjTWG0nGXikH", // destination address
-                  amount: "20000000" //Toncoin in nanotons
+                  amount: message.amount //Toncoin in nanotons
               }
           ]
       }
@@ -204,6 +204,12 @@ window.addEventListener(
 
       // you can use signed boc to find the transaction 
       const someTxData = await myAppExplorerService.getTransaction(result.boc);
+      let messagedata = {
+        check: "someTxData"
+      }
+      var targetWindow = window.parent;
+      targetWindow.postMessage(JSON.stringify(messagedata), '*');
+      console.log(messagedata)
     }
 
     // …
