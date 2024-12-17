@@ -160,9 +160,9 @@ window.getWallet = (async function getconnectdata() {
   let messagedata = {
       address: tonConnectUI.wallet.account.address
     }
-  // var targetWindow = window.parent;
-  // targetWindow.postMessage(JSON.stringify(messagedata), '*');
-  // console.log(messagedata)
+  var targetWindow = window.parent;
+  targetWindow.postMessage(JSON.stringify(messagedata), '*');
+  console.log(messagedata)
   // return "1111";
 
 
