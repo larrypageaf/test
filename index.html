@@ -108,6 +108,15 @@ let tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: 'https://site-production-cdea.up.railway.app/tonconnect-manifest.json'
   });;
 window.connectdata = (async function connectdata() {
+
+  if (tonConnectUI && tonConnectUI.wallet && tonConnectUI.wallet.account) {
+    let messagedata = {
+      address: tonConnectUI.wallet.account.address
+    }
+    var targetWindow = window.parent;
+    targetWindow.postMessage(JSON.stringify(messagedata), '*');
+    return;
+  }
   // await tonConnectUI.disconnect();
   console.log("test data");
   
@@ -151,9 +160,9 @@ window.getWallet = (async function getconnectdata() {
   let messagedata = {
       address: tonConnectUI.wallet.account.address
     }
-  var targetWindow = window.parent;
-  targetWindow.postMessage(JSON.stringify(messagedata), '*');
-  console.log(messagedata)
+  // var targetWindow = window.parent;
+  // targetWindow.postMessage(JSON.stringify(messagedata), '*');
+  // console.log(messagedata)
   // return "1111";
 
 
