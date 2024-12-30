@@ -148,7 +148,7 @@ window.connectdata = (async function connectdata() {
 });
 window.logout = (async function logOut1() {
   if (tonConnectUI && tonConnectUI.wallet && tonConnectUI.wallet.account) {
-    await tonConnectUI.disconnect();
+    await tonConnectUI.connector.disconnect();
   }
 });
 window.getWallet = (async function getconnectdata() {
