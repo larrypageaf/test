@@ -147,6 +147,7 @@ window.connectdata = (async function connectdata() {
   // return tonConnectUI.connector;
 });
 window.logout = (async function logOut1() {
+  console.log("log out");
   if (tonConnectUI && tonConnectUI.wallet && tonConnectUI.wallet.account) {
     await tonConnectUI.connector.disconnect();
   }
